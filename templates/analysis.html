@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% set active = "analysis" %}
+{% block title %}X-ray Analysis{% endblock %}
+
+{% block content %}
+<h1 class="page-title">X-ray <span class="accent">Analysis</span></h1>
+<p class="lead">Upload a chest X-ray (PA / AP view) to classify it as pneumonia or normal.</p>
+
+<div class="card">
+  <div class="grid">
+    <div>
+      <label id="dropzone" class="dropzone" for="file">
+        <img id="preview" alt="X-ray preview" hidden>
+        <div id="dz-text">
+          <svg viewBox="0 0 24 24" width="44" height="44" aria-hidden="true"><path fill="currentColor" d="M19 13v6H5v-6H3v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6zM11 3.8 7.4 7.4 6 6l6-6 6 6-1.4 1.4L13 3.8V16h-2z" transform="translate(0 2)"/></svg>
+          <p><strong>Click to choose</strong> or drag &amp; drop an image</p>
+          <small>JPG, JPEG or PNG · max 10 MB</small>
+        </div>
+      </label>
+      <input id="file" type="file" accept="image/jpeg,image/png" hidden>
+      <button id="analyze" class="btn" disabled>Analyze image</button>
+    </div>
+
+    <div id="result" class="result" aria-live="polite">
+      <div id="placeholder" class="placeholder">
+        <svg viewBox="0 0 24 24" width="48" height="48" aria-hidden="true"><path fill="currentColor" d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-1 10h-4v4h-4v-4H6v-4h4V5h4v4h4z"/></svg>
+        <p>Diagnostic result will appear here.</p>
+      </div>
+      <div id="loading" class="placeholder" hidden>
+        <div class="spinner"></div>
+        <p>Analyzing radiograph…</p>
+      </div>
+      <div id="output" hidden>
+        <div id="badge" class="badge"></div>
+        <p class="label-small">Model confidence</p>
+        <div class="meter"><div id="meter-fill" class="meter-fill"></div></div>
+        <p id="confidence" class="confidence"></p>
+        <p id="advice" class="advice"></p>
+      </div>
+      <p id="error" class="error" hidden></p>
+    </div>
+  </div>
+</div>
+
+<div class="notice"><strong>System Note:</strong> PulmoScan is an AI-assisted research and educational system. Its predictions should not be considered a medical diagnosis.</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+{% endblock %}

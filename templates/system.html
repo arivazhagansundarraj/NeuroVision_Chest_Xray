@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% set active = "system" %}
+{% block title %}About System{% endblock %}
+
+{% block content %}
+<h1 class="page-title">About <span class="accent">System</span></h1>
+<p class="lead">How PulmoScan turns an uploaded X-ray into a prediction.</p>
+
+<div class="steps">
+  <article class="card step"><b>1</b><h3>Upload</h3><p>The user uploads a chest X-ray in JPG, JPEG or PNG format (up to 10 MB).</p></article>
+  <article class="card step"><b>2</b><h3>Preprocessing</h3><p>The image is converted to grayscale, resized to 128 × 128 pixels and scaled to the 0–1 range.</p></article>
+  <article class="card step"><b>3</b><h3>CNN model</h3><p>A convolutional neural network extracts patterns from the lungs and outputs a probability score.</p></article>
+  <article class="card step"><b>4</b><h3>Prediction</h3><p>A score of 0.5 or higher is classified as pneumonia, otherwise normal, and shown with its confidence.</p></article>
+</div>
+
+<div class="card">
+  <h2>Model architecture</h2>
+  <div class="chips">
+    <span>Input 128×128×1</span><span>Conv2D 32 + MaxPool</span><span>Conv2D 64 + MaxPool</span>
+    <span>Conv2D 128 + MaxPool</span><span>Flatten</span><span>Dense 128 (ReLU)</span>
+    <span>Dropout 0.5</span><span>Dense 1 (Sigmoid)</span>
+  </div>
+  <p class="note-small">Trained with the Adam optimizer and binary cross-entropy loss.</p>
+</div>
+
+<div class="notice"><strong>System Note:</strong> PulmoScan is an AI-assisted research and educational system. Its predictions should not be considered a medical diagnosis.</div>
+{% endblock %}

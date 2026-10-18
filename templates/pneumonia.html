@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% set active = "pneumonia" %}
+{% block title %}About Pneumonia{% endblock %}
+
+{% block content %}
+<h1 class="page-title">About <span class="accent">Pneumonia</span></h1>
+<p class="lead">Pneumonia is an infection that inflames the air sacs in one or both lungs. The sacs may fill with fluid or pus, causing cough, fever and difficulty breathing.</p>
+
+<h2 class="section-title">Medical terms <span>glossary</span></h2>
+<div class="terms">
+  <article class="term"><h3>Pneumonia</h3><p>Infection that inflames the air sacs (alveoli) in one or both lungs. The sacs may fill with fluid or pus.</p></article>
+  <article class="term"><h3>Radiograph</h3><p>The medical term for an X-ray image. A chest radiograph shows the lungs, heart, ribs and airways.</p></article>
+  <article class="term"><h3>Alveoli</h3><p>Tiny air sacs in the lungs where oxygen enters the blood and carbon dioxide leaves it.</p></article>
+  <article class="term"><h3>Opacity</h3><p>A whiter-than-normal area on a lung X-ray. It can mean fluid, infection or other tissue is blocking the X-rays.</p></article>
+  <article class="term"><h3>Consolidation</h3><p>A region of lung tissue filled with liquid instead of air. It is a classic X-ray sign of bacterial pneumonia.</p></article>
+  <article class="term"><h3>Infiltrate</h3><p>A general term for substances such as fluid or cells that appear in the lung tissue and look hazy on an X-ray.</p></article>
+  <article class="term"><h3>Pleural effusion</h3><p>Fluid that collects in the space between the lung and the chest wall. It often appears as a white area at the base of the lung.</p></article>
+  <article class="term"><h3>Bronchi</h3><p>The main airways that carry air from the windpipe (trachea) into each lung.</p></article>
+  <article class="term"><h3>Dyspnea</h3><p>The medical word for shortness of breath or difficulty breathing.</p></article>
+  <article class="term"><h3>Bacterial vs. viral</h3><p>Bacterial pneumonia often shows lobar consolidation, while viral pneumonia tends to look patchy or diffuse on X-ray.</p></article>
+  <article class="term"><h3>Sensitivity &amp; specificity</h3><p>Sensitivity is how often a test finds true disease. Specificity is how often it correctly clears healthy patients.</p></article>
+  <article class="term"><h3>CNN</h3><p>Convolutional neural network: the type of deep-learning model PulmoScan uses to learn patterns in images.</p></article>
+</div>
+
+<div class="card">
+  <h2>Symptoms &amp; risk factors</h2>
+  <div class="two-col">
+    <div>
+      <h3 class="sub">Common symptoms</h3>
+      <div class="chips">
+        <span>Cough</span><span>Fever</span><span>Chills</span><span>Chest pain</span><span>Dyspnea</span>
+        <span>Fatigue</span><span>Sputum production</span><span>Rapid breathing</span><span>Hypoxia</span>
+      </div>
+    </div>
+    <div>
+      <h3 class="sub">Higher-risk groups</h3>
+      <div class="chips">
+        <span>Infants</span><span>Adults over 65</span><span>Smokers</span><span>COPD</span>
+        <span>Asthma</span><span>Diabetes</span><span>Weak immunity</span><span>Hospitalized patients</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="notice"><strong>Medical disclaimer:</strong> If you have symptoms such as cough, fever or difficulty breathing, seek care from a qualified doctor. This website cannot diagnose or treat any condition.</div>
+{% endblock %}

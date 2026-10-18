@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% set active = "dashboard" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<span class="pill">AI • CHEST X-RAY CLASSIFICATION</span>
+<h1 class="page-title">Welcome to Pulmo<span class="accent">Scan</span></h1>
+<p class="lead">AI-assisted chest X-ray classification platform designed to analyze radiographs and classify them as pneumonia or normal.</p>
+
+<div class="dash-grid">
+  <div class="card">
+    <h2>Project Overview</h2>
+    <p>PulmoScan is a deep learning based chest X-ray classification system. The application processes an uploaded X-ray image using a trained model and provides a classification result together with the model confidence.</p>
+    <div class="flow">
+      <span>Upload X-ray</span><i>→</i><span>Preprocessing</span><i>→</i><span>AI Model</span><i>→</i><span>Prediction</span>
+    </div>
+    <a class="btn" href="{{ url_for('analysis') }}">Analyze an X-ray</a>
+  </div>
+
+  <aside class="sysinfo">
+    <h2>System Information</h2>
+    <ul>
+      <li>Input: Chest X-ray Image</li>
+      <li>Image Size: 128 × 128</li>
+      <li>Model: Deep Learning (CNN)</li>
+      <li>Output: Pneumonia / Normal</li>
+    </ul>
+  </aside>
+</div>
+
+<div class="notice"><strong>System Note:</strong> PulmoScan is an AI-assisted research and educational system. Its predictions should not be considered a medical diagnosis.</div>
+{% endblock %}
