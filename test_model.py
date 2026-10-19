@@ -1,6 +1,6 @@
 import os
 
-# Windows PATH on this PC is missing System32, where msvcp140.dll lives
+
 os.environ["PATH"] += os.pathsep + r"C:\Windows\System32"
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 
@@ -19,7 +19,7 @@ print("Model loaded successfully!")
 
 import sys
 
-# usage: python test_model.py "path\to\image.jpeg"  (defaults to xray.jpeg)
+
 image_path = sys.argv[1] if len(sys.argv) > 1 else "xray.jpeg"
 
 if not os.path.isfile(image_path):

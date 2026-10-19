@@ -1,6 +1,6 @@
 import os
 
-# Windows PATH on this PC is missing System32, where msvcp140.dll lives
+
 os.environ["PATH"] += os.pathsep + r"C:\Windows\System32"
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 
